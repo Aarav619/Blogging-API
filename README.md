@@ -64,7 +64,8 @@ cd Blogging-API && npm i && node app.js
     ```json
     {
         "headings":"Complete task",
-        "userBlog":"Finish given task in time!"
+        "userBlog":"Finish given task in time!",
+        "userID":"<user._id>
     }
     ```
     Response Headers
