@@ -81,7 +81,7 @@ cd Blogging-API && npm i && node app.js
     ```
 - **/user/blog/:userID**: Get all blogs of a user.
 
-    GET /user/blog/61a50ce50711bc134237df95
+    GET /user/blog/<user._id>
 
     Response Headers
     ```
@@ -94,6 +94,29 @@ cd Blogging-API && npm i && node app.js
     X-Powered-By: Express
 
     No Blog for user with UserID:61a50ce50711bc134237df95 found!
+    ```
+
+    GET /user/blog/<user._id>
+
+    Response Headers
+    ```
+    HTTP/1.1 200 OK
+    Connection: close
+    Content-Length: 147
+    Content-Type: application/json; charset=utf-8
+    Date: Wed, 22 Dec 2021 10:24:22 GMT
+    ETag: W/"93-yuqjIOfWp58jXx7IIVJsG85v6fM"
+    X-Powered-By: Express
+
+        {
+            "_id": "61c2fc7e6fe1e736fc54157a",
+            "headings": "Complete task",
+            "userBlog": "Finish given task in time!",
+            "userID": "61c214c03edd834e961333bd",
+            "__v": 0
+        }
+
+    Blog for User with UserID:61c214c03edd834e961333bd was successfully found.    
     ```
 - **/user/:id**: Finding user with unique Mongoose ID.
 
