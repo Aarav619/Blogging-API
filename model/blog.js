@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 //Anything stored in database is model
+
 const Blog = new mongoose.Schema({
   //User object conatins "Schema" containing object name "obj" which further conatins the following
+
   headings: {
     type: String,
     required: true,
