@@ -1,30 +1,22 @@
-const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
-//module with external requests
-const userRoute = require("./routes/UserRoutes")
-const adminRoute = require("./routes/AdminRoutes")
+require("dotenv").config();
+require("./config/database").connect();
 
-app.use(express.urlencoded({extended: false}))
+const express = require("express");
+
+//module with external requests
+const userRoute = require("./routes/UserRoutes");
+const adminRoute = require("./routes/AdminRoutes");
+
+const app = express();
+
+app.use(express.urlencoded());
 app.use(express.json());
+
 app.use(userRoute);
 app.use(adminRoute);
 
-mongoose
-  .connect("mongodb://localhost:27017/testcase", {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  })
-  .then(() => {
-    console.info("MongoDB connected successfully");
-  })
-  .catch(() => {
-    console.error("MongoDB connection failed.");
-  });
+const { PORT } = process.env;
 
-
-const PORT =7000;
-
-app.listen(PORT,() =>{
-    console.log(`The server is listening on ${PORT}`);
-})
+app.listen(PORT, () => {
+	console.log(`The server is listening on ${PORT}`);
+});
