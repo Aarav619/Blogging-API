@@ -23,7 +23,7 @@ exports.LoginUsingEmailPass = (req, res) => {
     Admin.findOne({ email: email })
         .then((admin) => {
             if (admin) {
-                console.info(`User with email ${email} sucessfully found.`);
+                console.info(`Admin with email ${email} sucessfully found.`);
                 if (password === admin.password) {
                     console.info("login Successful");
                     return res.status(200).send({ admin })
@@ -31,8 +31,8 @@ exports.LoginUsingEmailPass = (req, res) => {
                 console.warn("Password Incorrect!");
                 return res.status(401).send("Password was incorrect")
             }
-            console.error(`User with the email :${email} doesn't exits`);
-            return res.status(404).send(`User with the ${email} doesn't exits!`)
+            console.error(`Admin with the email :${email} doesn't exits`);
+            return res.status(404).send(`Admin with the ${email} doesn't exits!`)
         })
 
         .catch((error) => {
