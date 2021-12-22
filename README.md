@@ -107,7 +107,7 @@ cd Blogging-API && npm i && node app.js
     Date: Wed, 22 Dec 2021 10:24:22 GMT
     ETag: W/"93-yuqjIOfWp58jXx7IIVJsG85v6fM"
     X-Powered-By: Express
-
+        '''json
         {
             "_id": "61c2fc7e6fe1e736fc54157a",
             "headings": "Complete task",
@@ -115,7 +115,7 @@ cd Blogging-API && npm i && node app.js
             "userID": "61c214c03edd834e961333bd",
             "__v": 0
         }
-
+        '''
     Blog for User with UserID:61c214c03edd834e961333bd was successfully found.    
     ```
 - **/user/:id**: Finding user with unique Mongoose ID.
